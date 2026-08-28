@@ -1,20 +1,33 @@
+* {
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 8px rgba(105, 28, 72, 0.25);
+}
+
 h1 {
     color: rgb(251, 249, 252);
     font-size: 400%;
 }
+
 .descripcion-ari {
     color: #691c48;
 }
 
 body {
-    background-color: #ebb9d1;
+    background: linear-gradient(135deg, #f5d5e3 0%, #ebb9d1 100%);
+    min-height: 100vh;
 }
 
 * {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
- /*
+
+/*
 * {
     outline: red dashed 1px;
 }
@@ -24,24 +37,61 @@ body {
     flex-wrap: wrap;
 }
 
-.col-1 { width: 8.33%; }
-.col-2 { width: 16.66%; }
-.col-3 { width: 24.99%; }
-.col-4 { width: 33.32%; }
-.col-5 { width: 41.65%; }
-.col-6 { width: 49.98%; }
-.col-7 { width: 58.31%; }
-.col-8 { width: 66.64%; }
-.col-9 { width: 74.97%; }
-.col-10 { width: 83.3%; }
-.col-11 { width: 91.63%; }
-.col-12 { width: 100%; }
+.col-1 {
+    width: 8.33%;
+}
 
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 24.99%;
+}
+
+.col-4 {
+    width: 33.32%;
+}
+
+.col-5 {
+    width: 41.65%;
+}
+
+.col-6 {
+    width: 49.98%;
+}
+
+.col-7 {
+    width: 58.31%;
+}
+
+.col-8 {
+    width: 66.64%;
+}
+
+.col-9 {
+    width: 74.97%;
+}
+
+.col-10 {
+    width: 83.3%;
+}
+
+.col-11 {
+    width: 91.63%;
+}
+
+.col-12 {
+    width: 100%;
+}
 
 .contenedor-principal {
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 30px;   
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .menu-principal {
@@ -49,12 +99,15 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #f699c4;
-    padding: 18px 150px;
+    padding: 9px 45px;
     border-radius: 50px;
-    width: 50%;
-    margin: 0 auto;
-    box-sizing: content-box;
+    width: fit-content;
+    max-width: 90%;
+    margin: 10px auto 0 10%;
+    box-sizing: border-box;
+    gap: 8px;
 }
+
 .menu-principal ul {
     display: flex;
     align-items: center;
@@ -63,14 +116,39 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .menu-principal li {
     cursor: pointer;
     font-weight: 500;
-    color: #ffffff;
+    color: #810e53;
     font-size: 20px;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
+.circulo-carrito {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #691c48;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
 
+.circulo-carrito:hover {
+    background: #810e53;
+    transform: scale(1.08);
+}
+
+.circulo-carrito:active {
+    transform: scale(0.95);
+}
 .mosaico-row {
     gap: 8px;
 }
@@ -81,7 +159,18 @@ body {
     object-fit: cover;
     object-position: center;
     display: block;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
+
+.mosaico:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
 .mosaico-row {
     gap: 8px;
 }
@@ -97,6 +186,7 @@ body {
 .mosaico-row .col-8 {
     width: calc(66.64% - 6px);
 }
+
 .texto-new {
     display: flex;
     flex-direction: column;
@@ -120,6 +210,7 @@ body {
     margin-top: 40px;
     margin-right: 20px;
 }
+
 .mi-boton .learn-more {
     display: block;
     width: 12rem;
@@ -193,4 +284,41 @@ body {
 
 .mi-boton:hover .button-text {
     color: #fff;
+}
+
+.descripcion-ari {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 30%;
+}
+
+.descripcion-ari,
+.texto-new {
+    line-height: 1.6;
+    max-width: 950px;
+}
+
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #d00f86;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-ari {
+    background-color: #691c48;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin-top: 60px;
 }
